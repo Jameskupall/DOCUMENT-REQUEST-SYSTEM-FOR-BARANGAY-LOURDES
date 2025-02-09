@@ -67,7 +67,7 @@
         </div>
 
         <div class="bg-blue-500 h-48 flex items-center justify-center gap-20">
-        <img src="{{URL ('images/sun.svg')}}" class="w-20" alt="">
+            <img src="{{URL ('images/sun.svg')}}" class="w-20" alt="">
 
             <p class="text-white font-bold text-xl">2</p>
         </div>

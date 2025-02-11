@@ -1,47 +1,46 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    @vite('resources/css/app.css')
+</head>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+    <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-8">
+        <h2 class="text-2xl font-bold text-center mb-6">Reset Password</h2>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        @if (session('status'))
+        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
+            {{ session('status') }}
         </div>
+        @endif
+
+        <form method="POST" action="{{ route('password.email') }}">
+            @csrf
+
+            <!-- Email Address -->
+            <div class="mb-4">
+                <label for="email" class="block font-medium text-gray-700">Email Address</label>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" required
+                    class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none @error('email') border-red-500 @enderror">
+                @error('email')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-6">
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+                    Send Password Reset Link
+                </button>
+            </div>
+        </form>
     </div>
-</div>
-@endsection
+
+</body>
+
+</html>

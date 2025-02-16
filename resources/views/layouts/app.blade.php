@@ -15,7 +15,7 @@
         <nav class="flex flex-col w-full text-center space-y-4">
             <a href="/" class="link">Dashboard</a>
             <a href="/residents" class="link">Residents</a>
-            <a href="/documents" class="link">Documents</a>
+            <a href="/requests/create" class="link">Documents</a>
             <a href="/daily_transactions" class="link">Daily Transactions</a>
         </nav>
         <div class="mt-auto pb-5">

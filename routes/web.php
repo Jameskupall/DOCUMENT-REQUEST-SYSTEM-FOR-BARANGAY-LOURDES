@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RequestItemController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,5 +20,7 @@ Route::get('/daily_transactions', function () {
 });
 
 Auth::routes();
+
+Route::resource('requests', RequestItemController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

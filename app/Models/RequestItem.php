@@ -9,5 +9,10 @@ class RequestItem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'born_on', 'street', 'document_purpose', 'document_type', 'status'];
+    protected $fillable = ['user_id', 'name', 'born_on', 'street', 'document_purpose', 'document_type', 'status'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

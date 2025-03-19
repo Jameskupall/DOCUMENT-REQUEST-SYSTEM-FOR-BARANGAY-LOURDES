@@ -1,68 +1,33 @@
-@extends('layouts.app')
+@extends('layouts.app-users')
+
 
 @section('content')
-<div class="text-center p-5">
-    <h1 class="text-3xl font-bold">Welcome to Document Base Management System</h1>
-    <p class="text-lg text-gray-600">Dashboard</p>
-</div>
+<div class="bg-gray-100 flex items-center justify-center min-h-screen py-10 px-4">
+    <div class="w-full max-w-4xl p-10 bg-white shadow-lg rounded-lg">
+        <h1 class="text-4xl font-bold text-gray-900 text-center">DOCUMENT REQUEST SYSTEM</h1>
+        <h2 class="text-2xl text-gray-700 mt-2 text-center">For Barangay Lourdes</h2>
+        <p class="mt-4 text-gray-600 text-center">Easily request documents like Barangay Clearance, Cedula, and more.</p>
 
-<div class="w-full flex flex-col items-center gap-10 p-5">
-
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 w-full max-w-5xl">
-        <div class="flex flex-col md:flex-row gap-8 w-full">
-            <div class="w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-lg">
-                <div class="bg-yellow-500 h-24 flex items-center justify-center">
-                    <p class="text-white font-bold text-xl">Brgy Clearance</p>
-                </div>
-                <div class="bg-blue-500 h-48 flex items-center justify-center gap-20">
-                    <img src="{{URL ('images/sun.svg')}}" class="w-20" alt="">
-                    <p class="text-white font-bold text-xl">5</p>
-                </div>
-            </div>
-
-            <div class="w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-lg">
-                <div class="bg-yellow-500 h-24 flex items-center justify-center">
-                    <p class="text-white font-bold text-xl">Indigency</p>
-                </div>
-                <div class="bg-blue-500 h-48 flex items-center justify-center gap-20">
-                    <img src="{{URL ('images/sun.svg')}}" class="w-20" alt="">
-                    <p class="text-white font-bold text-xl">3</p>
-                </div>
-            </div>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <a href="#" class="px-6 py-4 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">Request a Document</a>
+            <a href="#" class="px-6 py-4 bg-green-600 text-white rounded-lg shadow hover:bg-green-700">Check Request Status</a>
+            <a href="#" class="px-6 py-4 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700">Contact Support</a>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-8 w-full">
-            <div class="w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-lg">
-                <div class="bg-yellow-500 h-24 flex items-center justify-center">
-                    <p class="text-white font-bold text-xl">Residency</p>
-                </div>
-                <div class="bg-blue-500 h-48 flex items-center justify-center gap-20">
-                    <img src="{{URL ('images/sun.svg')}}" class="w-20" alt="">
-                    <p class="text-white font-bold text-xl">1</p>
-                </div>
-            </div>
-
-            <div class="w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-lg">
-                <div class="bg-yellow-500 h-24 flex items-center justify-center">
-                    <p class="text-white font-bold text-xl">Brgy Certificate</p>
-                </div>
-                <div class="bg-blue-500 h-48 flex items-center justify-center gap-20">
-                    <img src="{{URL ('images/sun.svg')}}" class="w-20" alt="">
-                    <p class="text-white font-bold text-xl">2</p>
-                </div>
-            </div>
+        <div class="mt-10 text-gray-700 text-lg">
+            <h3 class="text-xl font-semibold">How It Works</h3>
+            <ul class="mt-2 space-y-2 list-disc list-inside">
+                <li>Submit your request for the required document online.</li>
+                <li>Our team will process your request within the stated timeframe.</li>
+                <li>Receive a notification when your document is ready for pickup.</li>
+            </ul>
         </div>
 
-        <div class="w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-lg md:col-span-2">
-            <div class="bg-yellow-500 h-24 flex items-center justify-center">
-                <p class="text-white font-bold text-xl">Oath Understanding</p>
-            </div>
-            <div class="bg-blue-500 h-48 flex items-center justify-center gap-20">
-                <img src="{{URL ('images/sun.svg')}}" class="w-20" alt="">
-                <p class="text-white font-bold text-xl">2</p>
-            </div>
+        <div class="mt-10 bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-lg font-semibold text-gray-800">Operating Hours</h3>
+            <p class="text-gray-600">Monday - Friday, 8:00 AM - 5:00 PM</p>
+            <p class="text-gray-600">Email: support@barangaylourdes.ph | Contact: (123) 456-7890</p>
         </div>
     </div>
 </div>
-
 @endsection

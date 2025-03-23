@@ -56,12 +56,9 @@ class RequestItemController extends Controller
         $requestItem->update(['status' => $status]);
 
         if ($requestItem->user) {
-            if ($status === 'approved') {
-                $requestItem->user->notify(new DocumentApprovedNotification($requestItem));
-            } elseif ($status === 'rejected') {
-                $requestItem->user->notify(new DocumentRejectedNotification($requestItem));
-            }
+            $requestItem->user->notify(new DocumentApprovedNotification($requestItem, $status));
         }
+
 
         return redirect()->back()->with('success', "Request has been {$status} successfully!");
     }

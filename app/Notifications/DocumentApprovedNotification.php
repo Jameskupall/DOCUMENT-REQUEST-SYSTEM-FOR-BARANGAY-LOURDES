@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\DatabaseMessage;
 
-class DocumentNotification extends Notification
+class DocumentApprovedNotification extends Notification
 {
     use Queueable;
 
@@ -34,7 +34,7 @@ class DocumentNotification extends Notification
                              - 1 valid ID",
                 'document_id' => $this->document->id,
             ];
-        } else {
+        } else { // Handle rejected case properly
             return [
                 'message' => "Your request for {$this->document->document_type} has been rejected. Please contact the barangay for more details.",
                 'document_id' => $this->document->id,

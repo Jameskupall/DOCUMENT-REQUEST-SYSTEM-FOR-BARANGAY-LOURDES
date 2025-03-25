@@ -1,6 +1,5 @@
 @extends('layouts.app-users')
 
-
 @section('title', 'All Requests')
 
 @section('content')

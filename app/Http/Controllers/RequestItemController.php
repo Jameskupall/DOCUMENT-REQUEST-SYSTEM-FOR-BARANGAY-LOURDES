@@ -13,7 +13,7 @@ class RequestItemController extends Controller
 
     public function index()
     {
-        $requests = RequestItem::all();
+        $requests = RequestItem::where('user_id', auth()->id())->get();
         return view('request-views.index', compact('requests'));
     }
 

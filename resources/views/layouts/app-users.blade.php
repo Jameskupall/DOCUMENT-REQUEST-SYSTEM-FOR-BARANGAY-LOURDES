@@ -20,6 +20,9 @@
             <a href="{{ route('requests.create') }}" class="sidebar-link {{ request()->routeIs('requests.create') ? 'bg-blue-700 text-white' : '' }}">
                 Documents Request
             </a>
+            <a href="{{ route('requests.index') }}" class="sidebar-link {{ request()->routeIs('requests.index') ? 'bg-blue-700 text-white' : '' }}">
+                Your Requests
+            </a>
         </nav>
     </aside>
 
@@ -81,12 +84,12 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+
     <main class="pl-[240px] mt-16 p-6">
         @yield('content')
     </main>
 
-    <!-- Scripts -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const dropdownButton = document.getElementById('navbarDropdown');
@@ -95,17 +98,17 @@
             const notificationDropdown = document.getElementById('notificationDropdown');
             const notificationBadge = document.getElementById('notificationBadge');
 
-            // Show/Hide User Dropdown
+
             dropdownButton?.addEventListener('click', function(event) {
                 dropdownMenu.classList.toggle('hidden');
                 event.stopPropagation();
             });
 
-            // Show/Hide Notification Dropdown
+
             notificationButton?.addEventListener('click', function(event) {
                 notificationDropdown.classList.toggle('hidden');
 
-                // Remove notification badge when clicked
+
                 if (notificationBadge) {
                     notificationBadge.remove();
                 }
@@ -113,7 +116,7 @@
                 event.stopPropagation();
             });
 
-            // Hide dropdowns when clicking outside
+
             document.addEventListener('click', function(event) {
                 if (!dropdownButton?.contains(event.target) && !dropdownMenu?.contains(event.target)) {
                     dropdownMenu.classList.add('hidden');
@@ -123,7 +126,7 @@
                 }
             });
 
-            // Mark notifications as read when clicked
+
             document.querySelectorAll('.notification-item').forEach(item => {
                 item.addEventListener('click', function() {
                     let notificationId = this.dataset.id;
@@ -134,7 +137,7 @@
                             'Content-Type': 'application/json'
                         },
                     }).then(() => {
-                        this.remove(); // Remove notification item after reading
+                        this.remove();
                         if (document.querySelectorAll('.notification-item').length === 0) {
                             notificationDropdown.innerHTML = '<li class="px-4 py-2">No new notifications</li>';
                         }

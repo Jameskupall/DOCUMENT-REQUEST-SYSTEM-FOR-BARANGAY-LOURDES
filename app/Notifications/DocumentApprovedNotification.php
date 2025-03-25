@@ -34,7 +34,7 @@ class DocumentApprovedNotification extends Notification
                              - 1 valid ID",
                 'document_id' => $this->document->id,
             ];
-        } else { // Handle rejected case properly
+        } else { 
             return [
                 'message' => "Your request for {$this->document->document_type} has been rejected. Please contact the barangay for more details.",
                 'document_id' => $this->document->id,

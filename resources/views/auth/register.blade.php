@@ -18,7 +18,7 @@
             <p class="text-xl md:text-2xl text-white text-center">To keep connected with us, please log in</p>
             <a class="p-2 rounded-2xl border-2 text-white mt-5 w-24 text-center hover:bg-white hover:text-blue-600 transition"
                 href="{{ route('login') }}">
-                Sign Up
+                Sign In
             </a>
         </div>
 

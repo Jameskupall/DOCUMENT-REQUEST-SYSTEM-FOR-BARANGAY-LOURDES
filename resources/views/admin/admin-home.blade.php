@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="text-center p-5">
-    <h1 class="text-3xl font-bold">Welcome to Document Base Management System</h1>
+    <h1 class="text-3xl font-bold">Welcome to Document Request System</h1>
     <p class="text-lg text-gray-600">Dashboard</p>
 </div>
 

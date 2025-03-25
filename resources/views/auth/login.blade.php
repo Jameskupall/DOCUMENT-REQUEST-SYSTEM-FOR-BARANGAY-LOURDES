@@ -24,7 +24,7 @@
         </div>
 
         <div class="w-full md:w-1/2 bg-white h-full flex flex-col items-center justify-center p-6 md:p-10">
-            <h1 class="text-3xl md:text-4xl font-bold mb-6">DOCUMENT BASED MANAGEMENT SYSTEM</h1>
+            <h1 class="text-3xl md:text-4xl font-bold mb-6">DOCUMENT REQUEST SYSTEM</h1>
 
         <form method="POST" action="{{ route('login') }}" class="w-full max-w-sm">
                 @csrf
